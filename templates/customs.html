@@ -1,0 +1,92 @@
+{% extends 'base2.html' %}
+
+{% block title %}Customs{% endblock title %}
+
+{% block body %}
+<style>
+    .dropbtn {
+        background-color: #60a3cf;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: #2980B9;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 400px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: medium;
+    }
+
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+
+    .show {
+        display: block;
+    }
+    body{
+        background-image: linear-gradient( #f7f7f7, #183883);
+    }
+</style>
+<br><br><br>
+<div class="container" style="text-align: center; font-size: 30px; margin-top: 10%; background-color: azure; padding-bottom: 5px; padding-top: 5px;">
+    <div class="container">
+        <p><u>Select Type Bill:</u></p>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="/boehome">Bill of Entry For Home Consumption</a>
+            <a href="/boewarehousing">Bill of Entry For Warehousing</a>
+            <a href="/boeexhome">Bill of Entry For Ex-bond Clearance for Home Consumption</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+<br><br><br><br><br><br><br><br><br><br><br>
+{% endblock body %}

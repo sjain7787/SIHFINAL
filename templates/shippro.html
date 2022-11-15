@@ -1,0 +1,36 @@
+{% extends 'base2.html' %}
+{% block title %}Shipping Processes{% endblock title %}
+
+
+{% block body %}
+
+<div class="row row-cols-1 row-cols-md-2 g-4" style="padding-top: 15px;">
+    <div class="col">
+        <div class="card text-center">
+            <a href="/import">
+                <img src="../static/img/import1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Import Vessel</h5>
+                    {% comment %} <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional
+                        content. This content is a little bit longer.</p> {% endcomment %}
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-center">
+            <a href="/export">
+                <img src="../static/img/export1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Export Vessel</h5>
+                    {% comment %} <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                        content. This content is a little bit longer.</p> {% endcomment %}
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+<br><br><br>
+{% endblock body %}

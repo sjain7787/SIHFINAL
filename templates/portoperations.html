@@ -1,0 +1,111 @@
+{% extends 'base2.html' %}
+
+{% block title %}Port Operations{% endblock title %}
+
+
+{% block body %}
+
+
+<style>
+    /* Full-width input fields */
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #00abfa;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .btn:hover {
+        background-color: cyan;
+        opacity: 1;
+    }
+</style>
+
+
+<br><br><br>
+
+<form method="post" action="/portoperations" class="container" style="font-size: 20px;">
+
+    <div class="container">
+        <p style="font-size: 30px;font-style: italic; text-align: center;"><u>Port Operations</u></p>
+    </div>
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="vesselid">Vessel ID( IMO / MMSI)</label>
+        <input type="text" class="form-control" id="vesselid" name="vesselid" placeholder="Vessel ID( IMO / MMSI)">
+    </div>
+    <div class="form-group">
+        <label for="cbid">Custom Broker ID</label>
+        <input type="text" class="form-control" id="cbid" name="cbid" placeholder="Custom Broker ID">
+    </div>
+    <div class="form-group">
+        <label for="harourpilot">Harbour Pilot</label>
+        <input type="text" class="form-control" id="harbourpilot" name="harbourpilot" placeholder="Harbour Pilot">
+    </div>
+    <div class="form-group">
+        <label for="tugboatid">Tugboat ID</label>
+        <input type="text" class="form-control" id="tugboatid" name="tugboatid" placeholder="Tugboat ID">
+    </div>
+    <div class="form-group">
+        <label for="vesseloperator">Vessel Operator</label>
+        <input type="text" class="form-control" id="vesseloperator" name="vesseloperator" placeholder="Vessel Operator">
+    </div>
+    <div class="form-group">
+        <label for="berthingdock">Berthing Dock</label>
+        <input type="text" class="form-control" id="berthingdock" name="berthingdock" placeholder="Berthing Dock">
+    </div>
+    <div class="form-group">
+        <label for="numberofcontainers">Numbers of Containers</label>
+        <input type="number" class="form-control" id="numberofcontainers" name="numberofcontainers" placeholder="Numbers of Containers">
+    </div>
+    <div class="form-group">
+        <label for="cranedriver">Crane Driver</label>
+        <input type="text" class="form-control" id="cranedriver" name="cranedriver" placeholder="Crane Driver">
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" class="form-control" id="type" name="type" placeholder="Import/Export">
+    </div>
+    <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo">
+    </div>
+    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button class="btn btn-primary" type="submit" style="width: 20%;">Submit</button>
+    </div>
+</form>
+
+<br><br><br>
+
+
+
+{% endblock body %}
+
+
+
+
+
+
+
+

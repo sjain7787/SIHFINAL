@@ -1,0 +1,203 @@
+{% extends 'base2.html' %}
+
+{% block title %}Ship Auditing{% endblock title %}
+
+
+{% block body %}
+<style>
+    body {
+        font-size: 20px;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 50%;
+        height: 40px;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #00abfa;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .btn:hover {
+        background-color: cyan;
+        opacity: 1;
+    }
+</style>
+
+<div class="container-fluid py-3 px-5">
+    <h3 style="text-align: center;">Self Checklist for Shipboard Management System </h3>
+    <p style="text-align: left;">
+        <b>Refer to SOLAS IX/1</b>
+        <b>Bulk carrier :</b>
+        <br>If “ESP” is assigned to a dry cargo ship within Class Notation, the ship is “Bulk carrier” in
+        terms of the ISM Code, otherwise the ship is “Other Cargo Ship”.
+        <br>However, it is to be confirmed whether or not the instruction from a flag state on the
+        application of the Resolution MSC.277(85) “Clarification of the term “Bulk Carrier” and
+        guidance for application of regulations in SOLAS to ships which occasionally carry dry
+        cargoes in bulk” has been adopted on case by case basis.
+        <br>[Note] Recently, some “Other cargo ships” are assigned with “ESP” at the owner’s option.
+        If there are any doubts, it shall be checked according to the definition of Bulk Carrier
+        specified in SOLAS IX/1.6, i.e. ships constructed with single deck, top-side tanks and
+        hopper side tanks in cargo spaces and intended primarily to carry dry cargo in bulk; or ore
+        carrier; or combination carrier.
+        <br>If there is a discrepancy of the vessel types between SC/SE and the SMC, the “Explanatory
+        Note” is available from ClassNK.
+
+    </p>
+</div>
+
+<div class="container-fluid px-5">
+    <h3 style="text-align: center;">Basic Vessels Detail </h3>
+    <form>
+        <label for="sname">Name of Ship</label><br>
+        <input type="text" id="sname" name="sname" size="150"><br>
+        <label for="cname">Name of Company</label><br>
+        <input type="text" id="cname" name="cname" size="150"><br>
+        <label for="daudit">Date of Audit</label><br>
+        <input type="text" id="daudit" name="daudit" size="150"><br>
+        <p>Type of Audit</p>
+        <select name="taudit">
+            <option value="indian">Select below</option>
+            <option value="Self-Audit/Internal Auditf">Self-Audit/Internal Audit</option>
+            <option value="External Audit">External Audit</option>
+        </select><br>
+        <label for="naudit">Name of Auditor</label><br>
+        <input type="text" id="naudit" name="naudit" size="150"><br>
+        <p>Type of Ship Services</p>
+        <select name="taudit">
+            <option value="--">Select below</option>
+            <option value="General Cargo Ships">General Cargo Ships</option>
+            <option value="Container Ship">Container ships</option>
+            <option value="Oil Tanker">Oil Tanker ships</option>
+            <option value="Gas Carriers">Gas Carriers ships</option>
+            <option value="Bulk Carriers Ship">Bulk Carriers ships</option>
+            <option value="Reefer Vessels">Reefer Vessels</option>
+            <option value="Ro-Ro ships">Ro-Ro ships</option>
+            <option value="Livestock ships">Livestock ships</option>
+            <option value="Other">Other</option>
+        </select><br>
+        <label for="DOC">DOC Number</label><br>
+        <input type="text" id="DOC" name="DOC" size="150"><br>
+        <label for="DOCI">DOC Issuer</label><br>
+        <input type="text" id="DOCI" name="lname" size="150"><br>
+    </form>
+</div>
+
+<div class="container-fluid px-5">
+    <hr>
+    <h3 style="text-align: center;">1. Shipboard Tour </h3>
+    <h4 style="text-align: left;">1.1 Bridge</h4>
+
+    <div class="py-2">
+        <form>
+            <label for="fname">1.1.1 Are Navigation equipment or radio equipment maintained in good order? </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="yes" name="review" value="YES">
+            <label for="yes">Yes</label>&nbsp;
+            <input type="radio" id="no" name="review" value="NO">
+            <label for="no">No</label>&nbsp;
+            <input type="radio" id="na" name="review" value="NA">
+            <label for="na">NA</label>&nbsp;<br>
+            <label for="lname">Review</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+            <label for="lname">Sugestion</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+        </form>
+    </div>
+
+    <div class="py-2">
+        <form>
+            <label for="fname">1.1.2 Are updated versions of nautical publications and IAMSAR Manual (Volume III)
+                available? </label> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="yes" name="review" value="YES">
+            <label for="yes">Yes</label>&nbsp;
+            <input type="radio" id="no" name="review" value="NO">
+            <label for="no">No</label>&nbsp;
+            <input type="radio" id="na" name="review" value="NA">
+            <label for="na">NA</label>&nbsp;<br>
+            <label for="lname">Review</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+            <label for="lname">Sugestion</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+        </form>
+    </div>
+
+    <div class="py-2">
+        <form>
+            <label for="fname">1.1.3 Are maritime safety information from NAVTEX or EGC checked regularly?</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="yes" name="review" value="YES">
+            <label for="yes">Yes</label>&nbsp;
+            <input type="radio" id="no" name="review" value="NO">
+            <label for="no">No</label>&nbsp;
+            <input type="radio" id="na" name="review" value="NA">
+            <label for="na">NA</label>&nbsp;<br>
+            <label for="lname">Review</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+            <label for="lname">Sugestion</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+        </form>
+    </div>
+
+    <div class="py-2">
+        <form>
+            <label for="fname">1.1.4 Are nautical charts and Notice to Mariners controlled properly?</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="yes" name="review" value="YES">
+            <label for="yes">Yes</label>&nbsp;
+            <input type="radio" id="no" name="review" value="NO">
+            <label for="no">No</label>&nbsp;
+            <input type="radio" id="na" name="review" value="NA">
+            <label for="na">NA</label>&nbsp;<br>
+            <label for="lname">Review</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+            <label for="lname">Sugestion</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+        </form>
+    </div>
+
+    <div class="py-2">
+        <form>
+            <label for="fname">1.1.5 Is ENCs updated in accordance with ECDIS handling procedure in SMS
+                properly?</label> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="yes" name="review" value="YES">
+            <label for="yes">Yes</label>&nbsp;
+            <input type="radio" id="no" name="review" value="NO">
+            <label for="no">No</label>&nbsp;
+            <input type="radio" id="na" name="review" value="NA">
+            <label for="na">NA</label>&nbsp;<br>
+            <label for="lname">Review</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+            <label for="lname">Sugestion</label><br>
+            <input type="text" id="naudit" name="lname" size="150"><br>
+        </form>
+    </div>
+
+
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start" style="margin-left: 50px;">
+    <button class="btn btn-primary" type="submit" style="width: 20%;">Submit</button>
+</div>
+
+<br>
+<br>
+{% endblock body %}

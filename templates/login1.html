@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+
+{% block body%}
+<style>
+    .container {
+        position: relative;
+        left: 0;
+        margin: 20px;
+        max-width: 400px;
+        padding: 16px;
+        text-align: center;
+        background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #00d9ff;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .btn:hover {
+        opacity: 1;
+    }
+</style>
+
+
+<br><br><br><br><br>
+<div class="container">
+
+    <div class="container" style="font-size: 50px; font-family: 'Times New Roman', Times, serif; font-style: italic;">
+        Sign In
+    </div>
+    <div class="container-fluid">
+        <main class="form-signin">
+            <form method="post" action="/login">
+                {% csrf_token %}
+
+
+                <div class="form-floating">
+                    <input type="text" class="h-60 form-control" id="floatingInput" name="Username"
+                        placeholder="Username">
+                    <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="h-60 form-control" id="floatingPassword" name="Password"
+                        placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <button class="w-150 h-60 btn btn-lg btn-primary" type="submit">Sign in</button>
+            </form>
+        </main>
+
+    </div>
+</div>
+<br><br><br><br><br><br>
+
+{% endblock body%}

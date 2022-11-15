@@ -1,0 +1,190 @@
+{% extends 'base2.html' %}
+
+{% block title %}Port Auditing{% endblock title %}
+
+
+{% block body %}
+
+<style>
+    body {
+        font-size: 20px;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 50%;
+        height: 40px;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #00abfa;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .btn:hover {
+        background-color: cyan;
+        opacity: 1;
+    }
+</style>
+<div class="container-fluid py-3 px-5">
+    <h3 style="text-align: center;">Self Checklist for Shipboard Management System </h3>
+</div>
+
+<div class="container-fluid px-5">
+    <h3 style="text-align: center;">Basic Ports Detail </h3>
+    <form>
+        <label for="sname">Name of Ship</label><br>
+        <input type="text" id="sname" name="sname" size="150"><br>
+        <label for="cname">Address of Port</label><br>
+        <input type="text" id="cname" name="cname" size="150"><br>
+        <label for="daudit">Date of Audit</label><br>
+        <input type="date" id="daudit" name="daudit" size="150"><br>
+        <p>Type of Audit</p>
+        <select name="taudit">
+            <option value="0">Select below</option>
+            <option value="Self-Audit/Internal Auditf">Self-Audit/Internal Audit</option>
+            <option value="External Audit">External Audit</option>
+          </select><br>
+        <label for="naudit">Name of Auditor</label><br>
+        <input type="text" id="naudit" name="naudit" size="150"><br>
+        <label for="gstin">GSTIN Number</label><br>
+        <input type="number" id="gstin" name="lname" size="150"><br>
+        <label for="lname">Company Registered ID</label><br>
+        <input type="text" id="naudit" name="lname" size="150"><br>
+      </form>
+</div>
+
+<div class="container-fluid px-5">
+    <hr>
+    <h3 style="text-align: center;">1. Port Tour </h3>
+    <h4 style="text-align: left;">1.1 Policy Implementation</h4>
+
+    <div class="py-2">
+        <form>
+            <div class="form-group">
+                <label for="one">1.1.1 Inspect the maintenance of the ship and equipment, emergency preparedness, fire safety, and certificate and documentation.</label>
+                <div>
+                    <label>
+                        <input type="radio" name="one" id="one" value="Yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="one" id="one" value="No">
+                        No
+                    </label>
+                    <label>
+                        <input type="radio" name="one" id="one" value="NA">
+                        NA
+                    </label>
+                </div>
+            </div>
+            <label for="review1">Review</label><br>
+            <input type="text" id="review1" name="review1" size="150"><br>
+            <label for="sugg1">Sugestion</label><br>
+            <input type="text" id="sugg1" name="sugg1" size="150"><br>
+        </form>
+    </div>
+
+    <div class="py-2">
+        <form>
+            <!-- <label for="fname">1.1.2 Instantly notify key personnel about non-compliant items </label> &nbsp;&nbsp;&nbsp;&nbsp; -->
+            <div class="form-group">
+                <label for="two">1.1.2 Instantly notify key personnel about non-compliant items</label>
+                <div>
+                    <label>
+                        <input type="radio" name="two" id="two" value="Yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="two" id="two" value="No">
+                        No
+                    </label>
+                    <label>
+                        <input type="radio" name="two" id="two" value="NA">
+                        NA
+                    </label>
+                </div>
+            </div>
+            <label for="review2">Review</label><br>
+            <input type="text" id="review2" name="review2" size="150"><br>
+            <label for="sugg2">Sugestion</label><br>
+            <input type="text" id="sugg2" name="sugg2" size="150"><br>
+        </form>
+    </div>
+
+    <div class="py-2">
+        <form>
+            <div class="form-group">
+                <label for="three">1.1.3 Take and annotate photos of failed items and add notes where necessary.</label>
+                <div>
+                    <label>
+                        <input type="radio" name="three" id="three" value="Yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="three" id="three" value="No">
+                        No
+                    </label>
+                    <label>
+                        <input type="radio" name="three" id="three" value="NA">
+                        NA
+                    </label>
+                </div>
+            </div>
+            <label for="review3">Review</label><br>
+            <input type="text" id="review3" name="review3" size="150"><br>
+            <label for="sugg3">Sugestion</label><br>
+            <input type="text" id="sugg3" name="sugg3" size="150"><br>
+        </form>
+    </div>
+
+    <div class="py-2">
+        <form>
+            <div class="form-group">
+                <label for="four">1.1.4 What is kind of the Emergency Respone Team (ERT) ?</label>
+                <div>
+                    <label>
+                        <input type="radio" name="four" id="four" value="Yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="four" id="four" value="No">
+                        No
+                    </label>
+                    <label>
+                        <input type="radio" name="four" id="four" value="NA">
+                        NA
+                    </label>
+                </div>
+            </div>
+            <label for="review4">Review</label><br>
+            <input type="text" id="review4" name="review4" size="150"><br>
+            <label for="sugg4">Sugestion</label><br>
+            <input type="text" id="sugg4" name="sugg4" size="150"><br>
+        </form>
+    </div>
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start" style="margin-left: 50px;">
+    <button class="btn btn-primary" type="submit" style="width: 20%;">Submit</button>
+</div>
+
+<br>
+<br>
+{% endblock body %}

@@ -1,0 +1,44 @@
+{% extends 'base2.html' %}
+
+{% block title %}Auditing{% endblock title %}
+
+{% block body %}
+<style>
+  body{
+    background-image: linear-gradient( 180deg,#f7f7f7, #047ef0);
+  }
+</style>
+<div class="container py-3 px-3" style="margin-top: 20px; margin-bottom: 40px;">
+  <h3 style="text-align: center;"> Self Servicing Audit </h3>
+  <div class="row row-cols-1 row-cols-md-2 g-4 align=center">
+    <div class="col-sm-6">
+      <div class="card">
+        <a href="/companyaudit">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Company Audit</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <a href="/shipaudit">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Ship Audit</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <a href="/portaudit">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Port Audit</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+{% endblock body %}

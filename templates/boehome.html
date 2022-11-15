@@ -1,0 +1,263 @@
+{% extends 'base2.html' %}
+
+{% block title %}BOE For Home Consumption{% endblock title %}
+
+
+
+{% block body %}
+<style>
+    /* Full-width input fields */
+
+    input[type=text],
+    input[type=number],
+    input[type=date],
+    input[type=file],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #00abfa;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 25%;
+        opacity: 0.9;
+    }
+
+    .btn:hover {
+        background-color: cyan;
+        opacity: 1;
+    }
+</style>
+
+<br><br><br>
+<div class="container">
+    <form action="/boehome" method="POST" style="margin-top: 5px; font-size: 20px;">
+
+        <div class="container">
+            <p style="font-size: 30px;font-style: italic; text-align: center;"><u>Bill of Entry for Home Consumption</u>
+            </p>
+        </div>
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="portCode">Port Code</label>
+            <input type="text" class="form-control" id="portCode" name="portCode" placeholder="Port Code">
+        </div>
+        <div class="form-group">
+            <label for="priorentrystamp">Prior Entry Stamp</label>
+            <input type="text" class="form-control" id="priorentrystamp" name="priorentrystamp"
+                placeholder="Prior Entry Stamp">
+        </div>
+        <div class="form-group">
+            <label for="importdeptsno">Import Dept. S. No.</label>
+            <input type="number" class="form-control" id="importdeptsno" name="importdeptsno"
+                placeholder="Import Dept. S. No.">
+        </div>
+        <div class="form-group">
+            <label for="date">Import Date</label>
+            <input type="date" class="form-control" id="date" name="date" placeholder="Import Date">
+        </div>
+        <div class="form-group">
+            <label for="customsbrokercode">Custom's Broker Code</label>
+            <input type="text" class="form-control" id="customsbrokercode" name="customsbrokercode"
+                placeholder="Custom's Broker Code">
+        </div>
+        <div class="form-group">
+            <label for="importcode">Importer's Code</label>
+            <input type="text" class="form-control" id="importcode" name="importcode"
+                placeholder="Importer's Code(IEC/GSTIN/PAN etc as applicable)">
+        </div>
+        <div class="form-group">
+            <label for="importsname">Importer's Name</label>
+            <input type="text" class="form-control" id="importsname" name="importsname" placeholder="Importer's Name ">
+        </div>
+        <div class="form-group">
+            <label for="address">Importer's Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Importer's Address">
+        </div>
+        <div class="form-group">
+            <label for="vesselsname">Vessel's Name</label>
+            <input type="text" class="form-control" id="vesselsname" name="vesselsname" placeholder="Vessel's Name ">
+        </div>
+        <div class="form-group">
+            <label for="rotationnodate">Rotation No. Date</label>
+            <input type="date" class="form-control" id="rotationnodate" name="rotationnodate"
+                placeholder="Rotation No. Date">
+        </div>
+        <div class="form-group">
+            <label for="lineno">Line Number</label>
+            <input type="number" class="form-control" id="lineno" name="lineno" placeholder="Line Number">
+        </div>
+        <div class="form-group">
+            <label for="portofshipment">Port of Shipment</label>
+            <input type="text" class="form-control" id="portofshipment" name="portofshipment"
+                placeholder="Port ofr Shipment ">
+        </div>
+        <div class="form-group">
+            <label for="countryoforigin">Country of Origin</label>
+            <input type="text" class="form-control" id="countryoforigin" name="countryoforigin"
+                placeholder="Country of Origin">
+        </div>
+        <div class="form-group">
+            <label for="coocode">Country of Origin Code</label>
+            <input type="number" class="form-control" id="coocode" name="coocode" placeholder="Country of Origin Code">
+        </div>
+        <div class="form-group">
+            <label for="countryofconsignment">Country of Consignment</label>
+            <input type="text" class="form-control" id="countryofconsignment" name="countryofconsignment"
+                placeholder="Country of Consignment">
+        </div>
+        <div class="form-group">
+            <label for="coccode">Country of Consignment Code</label>
+            <input type="number" class="form-control" id="coccode" name="coccode"
+                placeholder="Country of Consignment Code">
+        </div>
+        <div class="form-group">
+            <label for="billofladingdate">Bill of Lading Date </label>
+            <input type="date" class="form-control" id="billofladingdate" name="billofladingdate"
+                placeholder="Bill of Lading Date">
+        </div>
+        <div class="container" style="text-align: center; font-size: 30px;">
+            <p><u>Packages</u></p>
+        </div>
+        <div class="form-group">
+            <label for="srno">Number Of Package</label>
+            <input type="number" class="form-control" id="srno" name="srno" placeholder="Number of Package">
+        </div>
+        <div class="form-group">
+            <label for="description">Description of Package</label>
+            <input type="text" class="form-control" id="description" name="description"
+                placeholder="Description of Package">
+        </div>
+        <div class="form-group">
+            <label for="marksandnumbers">Marks and Numbers</label>
+            <input type="number" class="form-control" id="marksandnumbers" name="marksandnumbers"
+                placeholder="Marks and Numbers">
+        </div>
+        <div class="form-group">
+            <label for="unitcode">Commercial Unit Code/ Standard Unit Code</label>
+            <input type="number" class="form-control" id="unitcode" name="unitcode"
+                placeholder="Commercial Unit Code/ Standard Unit Code">
+        </div>
+        <div class="container" style="text-align: center; font-size: 30px;">
+            <p><u>Weight</u></p>
+        </div>
+        <div class="form-group">
+            <label for="weight">Weight/Volume/Number etc.</label>
+            <input type="number" class="form-control" id="weight" name="weight" placeholder="Weight/Volume/Number etc.">
+        </div>
+        <div class="form-group">
+            <label for="ritcno">R.I.T.C. No.</label>
+            <input type="number" class="form-control" id="ritcno" name="ritcno" placeholder="R.I.T.C. No.">
+        </div>
+        <div class="container" style="text-align: center; font-size: 30px;">
+            <p><u>Goods</u></p>
+        </div>
+        <div class="form-group">
+            <label for="custrffheading">Custom Tarrif Heading</label>
+            <input type="text" class="form-control" id="custrffheading" name="custrffheading"
+                placeholder="Custom Tarrif Heading">
+        </div>
+        <div class="container" style="text-align: center; font-size: 30px;">
+            <p><u>Customs Duty</u></p>
+        </div>
+        <div class="form-group">
+            <label for="noofduty">Nature of Duty Code</label>
+            <input type="number" class="form-control" id="noofduty" name="noofduty" placeholder="Nature of Duty Code">
+        </div>
+        <div class="form-group">
+            <label for="assessablevalue">Assessable Value under Section 14 Customs Act, 1962</label>
+            <input type="number" class="form-control" id="assessablevalue" name="assessablevalue"
+                placeholder="Assessable Value under Section 14 Customs Act, 1962 (Rs.)">
+        </div>
+        <div class="form-group">
+            <label for="rate">Rate Basic/ Auxillary(Rs.)</label>
+            <input type="number" class="form-control" id="rate" name="rate" placeholder="Rate Basic/ Auxillary(Rs.)">
+        </div>
+        <div class="container" style="text-align: center; font-size: 30px;">
+            <p><u>Additional Duty</u></p>
+        </div>
+        <div class="form-group">
+            <label for="cetheading">C.E.T. Heading </label>
+            <input type="text" class="form-control" id="cetheading" name="cetheading" placeholder="C.E.T. Heading">
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount Basic / Auxillary (Rs.) </label>
+            <input type="number" class="form-control" id="amount" name="amount"
+                placeholder="Amount Basic / Auxillary (Rs.)">
+        </div>
+
+        <div class="form-group">
+            <label for="addvalue">Value Under Section 3 Custom Tariff Act,1975(Rs.)</label>
+            <input type="number" class="form-control" id="addvalue" name="addvalue"
+                placeholder="Value Under Section 3 Custom Tariff Act,1975(Rs.)">
+        </div>
+        <div class="form-group">
+            <label for="addrate">Rate</label>
+            <input type="number" class="form-control" id="addrate" name="addrate" placeholder="Rate">
+        </div>
+        <div class="form-group">
+            <label for="totaladdduty">Total Additional Duty</label>
+            <input type="number" class="form-control" id="totaladdduty" name="totaladdduty"
+                placeholder="Total Additional Duty">
+        </div>
+        <div class="container" style="text-align: center; font-size: 30px;">
+            <p><u>IGST</u></p>
+        </div>
+        <div class="form-group">
+            <label for="gstcode">GST Code</label>
+            <input type="number" class="form-control" id="gstcode" name="gstcode" placeholder="GST Code">
+        </div>
+        <div class="form-group">
+            <label for="igstrate">IGST Rate</label>
+            <input type="number" class="form-control" id="igstrate" name="igstrate" placeholder="IGST Rate">
+        </div>
+        <div class="form-group">
+            <label for="exemptionandnotifiigst">Exemption Notification for Clamming Exemption from IGST</label>
+            <input type="file" class="form-control" id="exemptionandnotifiigst" name="exemptionandnotifiigst">
+        </div>
+        <div class="form-group">
+            <label for="igstamount">IGST Amount(Rs.)</label>
+            <input type="number" class="form-control" id="igstamount" name="igstamount" placeholder="IGST Amount(Rs.)">
+        </div>
+        <div class="form-group">
+            <label for="gstcomprate">GST Compensation Cess Rate</label>
+            <input type="number" class="form-control" id="gstcomprate" name="gstcomprate"
+                placeholder="GST Compensation Cess Rate">
+        </div>
+        <div class="form-group">
+            <label for="exemptionandnotifigst">Exemption Notification for Clamming Exemption from GST Compensation
+                Cess</label>
+            <input type="file" class="form-control" id="exemptionandnotifigst" name="exemptionandnotifigst">
+        </div>
+        <div class="form-group">
+            <label for="gstcompamount">GST Compensation Cess Amount</label>
+            <input type="number" class="form-control" id="gstcompamount" name="gstcompamount"
+                placeholder="GST Compensation Cess Amount">
+        </div>
+        <div class="form-group">
+            <label for="totalduty" style="font-size: 30px;"> <u> Total Duty</u></label>
+            <input type="number" class="form-control" id="totalduty" name="totalduty" placeholder="Total Duty">
+        </div>
+        <br>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock body %}
